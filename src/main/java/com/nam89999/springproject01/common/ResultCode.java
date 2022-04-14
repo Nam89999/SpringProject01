@@ -24,6 +24,11 @@ public enum ResultCode {
         return rtnMsg;
     }
 
+    public <T> Result<T> result(T resultObject) {
+        return new Result<T>(resultObject, this);
+    }
+
+
     public <T> Result<T> result() {
         return new Result<>(null, this);
     }
