@@ -4,6 +4,8 @@ public enum ResultCode {
 
     Success(0, "성공"),
 
+    NOT_EXISTS(1000, "존재하지 않는 회원입니다."),
+    NOT_CORRECT_MEMBER(1001, "아이디와 비밀번호가 일치하지 않습니다."),
 
     DBError(9998, "DB 오류입니다."),
     ETCError(9999, "기타 오류입니다.");
