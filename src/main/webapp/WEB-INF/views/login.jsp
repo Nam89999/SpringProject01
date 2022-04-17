@@ -14,6 +14,7 @@
 아이디 : <input type="text" id="id">
 비밀번호 : <input type="text" id="password">
 <button onclick="$login.login()">로그인</button>
+<button onclick="$login.signUp()">회원가입</button>
 
 </body>
 </html>

@@ -3,7 +3,7 @@ package com.nam89999.springproject01.DTO;
 import lombok.Getter;
 import lombok.Setter;
 
-public class LoginDTO {
+public class SignUpDTO {
     private String id;
     private String password;
     

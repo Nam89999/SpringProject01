@@ -37,6 +37,13 @@ public class MemberController extends AbstractController {
         Result result = memberService.login(loginDTO);
         return return2Map(result);
     }
+    
+    @PostMapping("/signUp")
+    @ResponseBody
+    public Map<String, Object> signUp(@RequestBody LoginDTO loginDTO) {
+        Result result = memberService.login(loginDTO);
+        return return2Map(result);
+    }
 
 
 }
