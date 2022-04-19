@@ -64,13 +64,19 @@ public class MemberService {
         try {
         	Member member = new Member();
         	member.setId(signUpDTO.getId());
-        	//passwod
-        	//name
-        	//email
+        	member.setPassword(signUpDTO.getPassword());//password 정확한 의미 (DTO)란?
+            member.setName(signUpDTO.getName());//name
+        	member.setEmail(signUpDTO.getEamil());//email
         	
-        	Member savedMember =  memberRepository.save(member);
-      
-        	//savedMember가 null인치 체크
+        	Member savedMember =  memberRepository.save(member); /*모르겠음*/
+
+        	if(savedMember==null)//savedMember가 null인치 체크
+        	{     
+                return ResultCode.Success.result();/*질문 입력변수로 members가 들어가면 뭐?*/
+        	}else {
+                return ResultCode.DBError.result();
+        	}
+        		
         	//null이라면 회원가입에 실패했다는 결과 return
         	//null이 아니라면 회원가입에 성공했다는 결과 return
         } catch (Exception e) {
