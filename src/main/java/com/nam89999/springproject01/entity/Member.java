@@ -16,8 +16,10 @@ public class Member {
     private String id;
     @Column(nullable = false, length = 45)
     private String password;
-    @Column(nullable = false, length = 45)
+    
+    @Column(nullable = false, length = 45, unique = true)
     private String email;
+    
     @Column(nullable = false, length = 10)
     private String name;
 	public String getId() {

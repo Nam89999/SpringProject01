@@ -1,6 +1,7 @@
 package com.nam89999.springproject01.controller;
 
 import com.nam89999.springproject01.DTO.LoginDTO;
+import com.nam89999.springproject01.DTO.SignUpDTO;
 import com.nam89999.springproject01.common.Result;
 import com.nam89999.springproject01.entity.Member;
 import com.nam89999.springproject01.service.MemberService;
@@ -40,8 +41,8 @@ public class MemberController extends AbstractController {
     
     @PostMapping("/signUp")
     @ResponseBody
-    public Map<String, Object> signUp(@RequestBody LoginDTO loginDTO) {
-        Result result = memberService.login(loginDTO);
+    public Map<String, Object> signUp(@RequestBody SignUpDTO signUpDTO) {
+        Result result = memberService.signUp(signUpDTO);//유저가 클라이언트단에서 입력한 것을 DTO 넣었고 서비스단에 signUp단에 넣어줬다.
         return return2Map(result);
     }
 

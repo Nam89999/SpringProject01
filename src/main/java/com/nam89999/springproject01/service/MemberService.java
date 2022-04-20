@@ -68,9 +68,9 @@ public class MemberService {
             member.setName(signUpDTO.getName());//name
         	member.setEmail(signUpDTO.getEamil());//email
         	
-        	Member savedMember =  memberRepository.save(member); /*모르겠음*/
+        	Member savedMember =  memberRepository.save(member); /*DB 저장,save하면 pk 값이 없으면 insert, 있으면 update*/
 
-        	if(savedMember==null)//savedMember가 null인치 체크
+        	if(savedMember!=null)//savedMember가 null인치 체크
         	{     
                 return ResultCode.Success.result();/*질문 입력변수로 members가 들어가면 뭐?*/
         	}else {
