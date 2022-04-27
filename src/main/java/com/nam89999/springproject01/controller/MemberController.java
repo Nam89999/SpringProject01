@@ -45,6 +45,15 @@ public class MemberController extends AbstractController {
         Result result = memberService.signUp(signUpDTO);//유저가 클라이언트단에서 입력한 것을 DTO 넣었고 서비스단에 signUp단에 넣어줬다.
         return return2Map(result);
     }
+    
+    @PostMapping("/updateMember")
+    @ResponseBody
+    public Map<String, Object> updateMember(@RequestBody SignUpDTO signUpDTO){
+    	Result result = memberService.updateMember(signUpDTO);
+		return return2Map(result) ;
+    	/*return2Map이란?*/
+    	
+    }
 
 
 }

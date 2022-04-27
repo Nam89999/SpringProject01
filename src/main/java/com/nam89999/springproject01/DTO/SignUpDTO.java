@@ -7,7 +7,7 @@ public class SignUpDTO {
 	private String id;
 	private String password;
 	private String name;// 추가 (추가해주는 이유는 뭘까?)
-	private String eamil; // 추가
+	private String email; // 추가
 
 	public String getId() {
 		return id;
@@ -30,12 +30,12 @@ public class SignUpDTO {
 		return null;
 	}
 
-	public String getEamil() {
-		return eamil;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEamil(String eamil) {
-		this.eamil = eamil;
+	public void setEamil(String email) {
+		this.email = email;
 	}
 
 	public void setName(String name) {

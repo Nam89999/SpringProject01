@@ -39,10 +39,14 @@ public class MemberService {
         }
     }
 
+    
+    //이건 뭐지
     public Result login(LoginDTO loginDTO) {
         return login(loginDTO.getId(), loginDTO.getPassword());
     }
 
+    
+    
     public Result login(String id, String password) {
         try {
         	Optional<Member> optionalMember = memberRepository.findById(id);
@@ -66,7 +70,7 @@ public class MemberService {
         	member.setId(signUpDTO.getId());
         	member.setPassword(signUpDTO.getPassword());//password 정확한 의미 (DTO)란?
             member.setName(signUpDTO.getName());//name
-        	member.setEmail(signUpDTO.getEamil());//email
+        	member.setEmail(signUpDTO.getEmail());//email
         	
         	Member savedMember =  memberRepository.save(member); /*DB 저장,save하면 pk 값이 없으면 insert, 있으면 update*/
 
@@ -83,6 +87,43 @@ public class MemberService {
             return ResultCode.DBError.result();
         }
     }
+    
+    
+    
+    
+    
+      public Result updateMember(SignUpDTO signUpDTO) {
+    	  
+    	  return updateMember(signUpDTO.getId(),signUpDTO.getPassword(),signUpDTO.getName(),signUpDTO.getEmail());
+      }
+    
+      
+      
+      //Update
+      private Result updateMember(String id, String password, String name, String email) {
+    	  
+    	  	 /*로그인했다고 가정하면 아이디로 안찾아도 되는가?
+    	  	  *try catch로 감싸야되는가?
+    	  	  *  */
+    	     Member member = new Member();
+    	     member.setId(id);
+    	     member.setPassword(password);
+    	     member.setName(name);
+    	     member.setEmail(email);
+    	     
+    	     
+         	Member updateMember =  memberRepository.update(member); 
+    	    
+         	if(updateMember!=null) {
+         		
+         		return ResultCode.Success.result();
+         	}else {
+         		
+         		return ResultCode.DBError.result();
+         	}
+    	 }
 
+    	  
+      }
+ 
 
-}

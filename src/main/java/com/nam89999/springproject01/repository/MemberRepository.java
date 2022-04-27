@@ -12,4 +12,6 @@ public interface MemberRepository extends JpaRepository<Member, String> {//Servi
 	
 	List<Member> findByName(String name);// 이름은 돔명이인이 있을수 있으니깐 List로 받아온다.
 
+	Member update(Member member);
+
 }
